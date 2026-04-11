@@ -45,7 +45,7 @@ def main(args=None):  # pylint: disable=missing-docstring
                        help='Target all TemplatesVMs')
     parser.add_argument('--standalones', action='store_true',
                        help='Target all StandaloneVMs')
-    parser.add_argument('--app', action='store_true',
+    parser.add_argument('--apps', '--app', action='store_true',
                        help='Target all AppVMs')
     parser.add_argument('command',
                         help='Salt command to execute (for example: '
@@ -80,7 +80,7 @@ def main(args=None):  # pylint: disable=missing-docstring
     if args.standalones:
         targets += [vm for vm in app.domains.values()
                     if vm.klass == 'StandaloneVM']
-    if args.app:
+    if args.apps:
         targets += [vm for vm in app.domains.values()
                     if vm.klass == 'AppVM']
     if args.all:

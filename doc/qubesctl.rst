@@ -34,7 +34,7 @@ Comma separated list of qubes to target
 --templates
 Target all templates
 
---app
+--apps
 Target all AppVMs
 
 --all
