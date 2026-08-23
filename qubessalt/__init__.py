@@ -202,7 +202,7 @@ fi
 
             for line in stdout_lines:
                 self.log.info('output: %s', line)
-            if stdout_lines[0].count(self.vm.name + ':') == 1:
+            if stdout_lines and stdout_lines[0].count(self.vm.name + ':') == 1:
                 stdout_lines = stdout_lines[1:]
             self.log.info('exit code: %d', p.returncode)
             exit_code = p.returncode
